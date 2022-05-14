@@ -2,7 +2,7 @@
   ansible.builtin.file:
     path: "{{ kitty_config_file_path | dirname }}"
     state: directory
-    owner: "{{ kitty_config_file_path }}"
+    owner: "{{ kitty_user_name }}"
     mode: '755'
   become: true
   become_user: root
