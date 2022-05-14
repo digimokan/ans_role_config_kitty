@@ -1,0 +1,7 @@
+- name: "Install the 'kitty' package"
+  ansible.builtin.package:
+    name: kitty
+    state: present
+  become: true
+  become_user: root
+

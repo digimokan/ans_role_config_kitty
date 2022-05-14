@@ -1,0 +1,9 @@
+# command to execute to start kitty
+kitty_start_cmd: 'kitty'
+
+# effective, user-based kitty config file path
+kitty_config_file_path: "/home/{{ kitty_user_name }}/.config/kitty/kitty.conf"
+
+# shell command to start in the terminal emulator
+shell_cmd: '/bin/sh'
+

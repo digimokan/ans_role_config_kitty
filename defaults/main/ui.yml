@@ -1,0 +1,30 @@
+# show window borders, and show window title bar
+show_window_borders_and_title_bar: true
+
+# padding (in pixels) to put in between terminal text and window border
+window_padding_pixels: 5
+
+# fade text of inactive windows: 0.0 (fully-faded) to 1.0 (no fade)
+fade_inactive_text_alpha: 0.9
+
+# enable audio alert bell
+audio_bell_enable: false
+
+# on bell, set window to 'urgent', for window manager processing
+set_window_urgent_on_bell: true
+
+# visual bell (screen flash) duration in millisec. Set to 0 to disable bell.
+visual_bell_duration_ms: 300
+
+# shape of cursor: 'block', 'beam', or 'underline'
+cursor_shape: 'block'
+
+# whether cursor blinks
+cursor_blink: false
+
+# cursor blink interval in millisec (if cursor_blink sets blinking)
+cursor_blink_interval_ms: 750
+
+# hint characters for URL-open links
+link_hint_chars: 'ASDFGHJKL'
+

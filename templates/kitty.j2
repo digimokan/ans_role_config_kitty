@@ -1,0 +1,111 @@
+# vim: set filetype=conf:
+# ANSIBLE-MANAGED CONFIGURATION FILE
+# Upstream config source:
+#   https://sw.kovidgoyal.net/kitty/conf/#sample-kitty-conf
+
+# SYSTEM / PERFORMANCE
+
+# do not check for kitty updates
+update_check_interval 0
+# allow programs to read/write from kitty-controlled clipboard without asking
+clipboard_control write-clipboard write-primary read-clipboard read-primary
+# delay in millisec between screen update cycles
+repaint_delay     {{ screen_update_delay_ms }}
+# NOTE: preferred to sync, but may cause input latency with high key-repeat rate
+sync_to_monitor   {{ 'yes' if sync_screen_update_to_monitor_refresh else 'no' }}
+# NOTE: lower input delay will increase responsiveess, but may cause flicker
+input_delay       {{ input_delay_ms }}
+
+# SHELL
+
+shell {{ shell_cmd }}
+# close kitty window when child process (i.e. the shell) exist
+close_on_child_death yes
+
+# FONT CONFIGURATION
+
+font_family       {{ font_family }}
+bold_font         {{ font_style_bold }}
+italic_font       {{ font_style_italic }}
+bold_italic_font  {{ font_style_bold_italic }}
+font_size         {{ font_size }}
+disable_ligatures {{ disable_showing_ligatures }}
+
+# WINDOWS
+
+hide_window_decorations {{ 'no' if show_window_borders_and_title_bar else 'yes' }}
+window_padding_width {{ window_padding_pixels }}
+inactive_text_alpha {{ fade_inactive_text_alpha }}
+confirm_os_window_close 0
+
+# COLORS
+
+foreground         {{ kitty_term_colors.text.fg }}
+background         {{ kitty_term_colors.background.bg }}
+background_opacity {{ kitty_term_colors.background.opacity }}
+cursor             {{ kitty_term_colors.cursor.bg }}
+cursor_text_color  {{ kitty_term_colors.cursor.fg_text }}
+url_color          {{ kitty_term_colors.urls.fg_text }}
+visual_bell_color  {{ kitty_term_colors.visual_bell.bg }}
+color0  {{ kitty_term_colors.black.color0_dimmed }}
+color8  {{ kitty_term_colors.black.color8_bright }}
+color1  {{ kitty_term_colors.red.color1_dimmed }}
+color9  {{ kitty_term_colors.red.color9_bright }}
+color2  {{ kitty_term_colors.green.color2_dimmed }}
+color10 {{ kitty_term_colors.green.color10_bright }}
+color3  {{ kitty_term_colors.yellow.color3_dimmed }}
+color11 {{ kitty_term_colors.yellow.color11_bright }}
+color4  {{ kitty_term_colors.blue.color4_dimmed }}
+color12 {{ kitty_term_colors.blue.color12_bright }}
+color5  {{ kitty_term_colors.magenta.color5_dimmed }}
+color13 {{ kitty_term_colors.magenta.color13_bright }}
+color6  {{ kitty_term_colors.cyan.color6_dimmed }}
+color14 {{ kitty_term_colors.cyan.color14_bright }}
+color7  {{ kitty_term_colors.white.color7_dimmed }}
+color15 {{ kitty_term_colors.white.color15_bright }}
+# mouse selection: use reverse video
+selection_foreground none
+selection_background none
+
+# BELL
+
+enable_audio_bell {{ 'yes' if audio_bell_enable else 'no' }}
+window_alert_on_bell {{ 'yes' if set_window_urgent_on_bell else 'no' }}
+visual_bell_duration {{ visual_bell_duration_ms }}
+
+# CURSOR
+
+cursor_shape {{ cursor_shape }}
+cursor_blink_interval {{ cursor_blink_interval_ms if cursor_blink else 0 }}
+
+# URLS
+
+visual_window_select_characters {{ link_hint_chars }}
+
+# MOUSE
+clear_all_mouse_actions yes
+
+# KEYBINDINGS
+
+# unmap all default kitty keybindings
+clear_all_shortcuts yes
+# clear the screen
+map {{ keymap_clear_screen }} clear_terminal clear active
+# scrolling
+map {{ scroll.page_up }} scroll_page_up
+map {{ scroll.page_down }} scroll_page_down
+map {{ scroll.top }} scroll_home
+map {{ scroll.bottom }} scroll_end
+# copy/paste
+map {{ copy_text }} copy_to_clipboard
+map {{ paste_text }} paste_from_clipboard
+# change font size
+map {{ increase_font_size }} change_font_size all +1.0
+map {{ decrease_font_size }} change_font_size all -1.0
+map {{ reset_font_size }} change_font_size all 0
+# follow urls
+map {{ toggle_url_hint_mode }} open_url_with_hints
+open_url_with {{ url_hint_mode_cmd }}
+# unicode input mode
+map {{ toggle_unicode_input_mode }} kitten unicode_input
+

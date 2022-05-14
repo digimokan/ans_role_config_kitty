@@ -1,0 +1,18 @@
+# main font-family
+font_family: 'monospace'
+
+# font size, in integer or fractional
+font_size: 13
+
+# font-family style for bold text
+font_style_bold: 'Bold'
+
+# font-family style for italic text
+font_style_italic: 'Italic'
+
+# font-family style for bold-italic text
+font_style_bold_italic: 'Bold Italic'
+
+# disable ligatures (multi-character glyphs): 'always', 'never', 'cursor'
+disable_showing_ligatures: 'cursor'
+

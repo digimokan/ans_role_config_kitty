@@ -1,0 +1,41 @@
+# colors for text, background, cursor, etc.
+kitty_term_colors:
+  text:
+    fg: '#C6C6C6'
+    fg_bright: '#D1C39E'
+  background:
+    bg: '#2B2B2B'
+    opacity: 0.9
+  cursor:
+    fg_text: '#000000'
+    bg: '#FF5F5F'
+  urls:
+    fg_text: '#000000'
+    bg: '#00B8C3'
+  visual_bell:
+    bg: '#FFFFFF'
+  black:
+    color0_dimmed: '#282828'
+    color8_bright: '#786C5F'
+  red:
+    color1_dimmed: '#BF5656'
+    color9_bright: '#DCA3A3'
+  green:
+    color2_dimmed: '#7B8F15'
+    color10_bright: '#9EA121'
+  yellow:
+    color3_dimmed: '#BD861D'
+    color11_bright: '#E0AA2A'
+  blue:
+    color4_dimmed: '#386B6E'
+    color12_bright: '#6F8C81'
+  magenta:
+    color5_dimmed: '#B1738F'
+    color13_bright: '#965372'
+  cyan:
+    color6_dimmed: '#58855A'
+    color14_bright: '#7BA66B'
+  white:
+    color7_dimmed: '#8F8270'
+    color15_bright: '#C6C6C6'
+

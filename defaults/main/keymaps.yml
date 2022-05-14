@@ -1,0 +1,30 @@
+# NOTE: multiple actions may be assigned to the same 'key' field
+
+# send 'clear-screen' to shell
+keymap_clear_screen: 'ctrl+l'
+
+# screen scroll
+scroll:
+  page_up: 'shift+page_up'
+  page_down: 'shift+page_down'
+  top: 'shift+home'
+  bottom: 'shift+end'
+
+# copy and paste selected text
+copy_text: 'ctrl+shift+c'
+paste_text: 'ctrl+shift+v'
+
+# increase and decrease font size
+increase_font_size: 'ctrl+equal'
+decrease_font_size: 'ctrl+minus'
+reset_font_size: 'ctrl+0'
+
+# toggle follow-url hint mode
+toggle_url_hint_mode: 'ctrl+shift+x'
+
+# command to run when following urls
+url_hint_mode_cmd: 'xdg-open'
+
+# toggle unicode character input mode
+toggle_unicode_input_mode: 'ctrl+shift+u'
+

@@ -1,0 +1,11 @@
+# delay in millisec between screen update cycles
+screen_update_delay_ms: 10
+
+# sync screen update cycles to refresh rate of monitor
+# NOTE: preferred to sync, but may cause input latency with high key-repeat rate
+sync_screen_update_to_monitor_refresh: true
+
+# delay in millisec between mouse/keyboard input-processing cycles
+# NOTE: lower input delay will increase responsiveess, but may cause flicker
+input_delay_ms: 3
+
