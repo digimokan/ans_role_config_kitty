@@ -91,8 +91,9 @@ clear_all_mouse_actions yes
 
 # unmap all default kitty keybindings
 clear_all_shortcuts yes
-# clear the screen
-map {{ keymap_clear_screen }} clear_terminal to-cursor active
+# clear the screen, and send passthrough interrupt to get a new prompt
+map {{ keymap_clear_screen }} clear_terminal clear active
+map {{ keymap_clear_screen }} send_text active \x0c
 # scrolling
 map {{ scroll.page_up }} scroll_page_up
 map {{ scroll.page_down }} scroll_page_down
