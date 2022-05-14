@@ -19,6 +19,8 @@ input_delay       {{ input_delay_ms }}
 # SHELL
 
 shell {{ shell_cmd }}
+# use shell-aware features, but don't change cursor at shell prompt
+shell_integration no-cursor
 # close kitty window when child process (i.e. the shell) exist
 close_on_child_death yes
 
@@ -45,7 +47,7 @@ background         {{ kitty_term_colors.background.bg }}
 background_opacity {{ kitty_term_colors.background.opacity }}
 cursor             {{ kitty_term_colors.cursor.bg }}
 cursor_text_color  {{ kitty_term_colors.cursor.fg_text }}
-url_color          {{ kitty_term_colors.urls.fg_text }}
+url_color          {{ kitty_term_colors.urls.bg }}
 visual_bell_color  {{ kitty_term_colors.visual_bell.bg }}
 color0  {{ kitty_term_colors.black.color0_dimmed }}
 color8  {{ kitty_term_colors.black.color8_bright }}
@@ -90,7 +92,7 @@ clear_all_mouse_actions yes
 # unmap all default kitty keybindings
 clear_all_shortcuts yes
 # clear the screen
-map {{ keymap_clear_screen }} clear_terminal clear active
+map {{ keymap_clear_screen }} clear_terminal reset active
 # scrolling
 map {{ scroll.page_up }} scroll_page_up
 map {{ scroll.page_down }} scroll_page_down
@@ -100,8 +102,8 @@ map {{ scroll.bottom }} scroll_end
 map {{ copy_text }} copy_to_clipboard
 map {{ paste_text }} paste_from_clipboard
 # change font size
-map {{ increase_font_size }} change_font_size all +1.0
-map {{ decrease_font_size }} change_font_size all -1.0
+map {{ increase_font_size }} change_font_size all +0.5
+map {{ decrease_font_size }} change_font_size all -0.5
 map {{ reset_font_size }} change_font_size all 0
 # follow urls
 map {{ toggle_url_hint_mode }} open_url_with_hints
