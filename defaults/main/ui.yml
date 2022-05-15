@@ -13,8 +13,8 @@ audio_bell_enable: false
 # on bell, set window to 'urgent', for window manager processing
 set_window_urgent_on_bell: true
 
-# visual bell (screen flash) duration in millisec. Set to 0 to disable bell.
-visual_bell_duration_ms: 0
+# visual bell (screen flash) duration in seconds. Set to 0.0 to disable bell.
+visual_bell_duration_sec: 0.0
 
 # shape of cursor: 'block', 'beam', or 'underline'
 cursor_shape: 'block'
