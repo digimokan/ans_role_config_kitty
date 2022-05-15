@@ -14,7 +14,7 @@ audio_bell_enable: false
 set_window_urgent_on_bell: true
 
 # visual bell (screen flash) duration in millisec. Set to 0 to disable bell.
-visual_bell_duration_ms: 300
+visual_bell_duration_ms: 0
 
 # shape of cursor: 'block', 'beam', or 'underline'
 cursor_shape: 'block'
