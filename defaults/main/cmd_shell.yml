@@ -2,7 +2,7 @@
 kitty_start_cmd: 'kitty'
 
 # command to execute to start kitty and immediately run a command
-kitty_start_and_run_cmd: 'kitty '
+kitty_start_and_run_cmd: 'kitty'
 
 # effective, user-based kitty config file path
 kitty_config_file_path: "/home/{{ kitty_user_name }}/.config/kitty/kitty.conf"
