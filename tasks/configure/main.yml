@@ -13,7 +13,7 @@
     src: "kitty.j2"
     owner: "{{ kitty_user_name }}"
     mode: '644'
-    force: yes
+    force: true
   become: true
   become_user: root
 

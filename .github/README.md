@@ -54,7 +54,7 @@ Install and configure the kitty terminal emulator.
        - name: "Install and configure the kitty terminal emulator"
          ansible.builtin.include_role:
            name: ans_role_config_kitty
-           public: yes
+           public: true
          vars:
            kitty_user_name: "user2"
    ```
